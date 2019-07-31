@@ -13,7 +13,7 @@ def upload_objects():
         bucket_name = sys.argv[4]
         my_bucket = s3_resource.Bucket(bucket_name)
 
-        for path, subdirs, files in os.walk(root_path) :
+        for path, subdirs, files in os.walk(root_path, followlinks=True) :
             path = path.replace("\\", "/")
             directory_name = path.replace(root_path,"")
             for file in files:
