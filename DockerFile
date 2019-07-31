@@ -3,5 +3,5 @@ ADD main.py
 RUN pip install --upgrade pip
 RUN pip install boto3
 
-
-CMD [ "python", "./main.py" ]
+ENTRYPOINT ["python", "./main.py"]
+CMD ["API_KEY", "API_SECRET", "DIR", "BUCKETNAME"]
